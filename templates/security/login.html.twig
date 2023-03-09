@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+   
+    
+{% block body %}
+    <style>
+        body {
+            background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: top;
+            background-size: auto;
+        
+             
+        }
+        .row {
+            position: absolute;
+            top: 30%;
+            margin-top: 100px;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            width: 100%;
+            transition: 1s 0.7s ease-in-out;
+            grid-template-columns: 1fr;
+            }
+            
+      </style>
+
+<div class="container py-5 h-100 my-4">
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+        <div class="card-body p-5 ">
+    <form class="needs-validation" method="post">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+            <div class="form-outline mb-4 was-validated">
+            <label for="inputEmail">Email</label>
+            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control form-control-lg" autocomplete="email" required autofocus>
+            <div class="invalid-feedback">
+                Please enter your email address
+            </div>                
+            </div>
+
+            <div class="form-outline mb-4 was-validated">
+            <label for="inputPassword">Password</label>
+            <input type="password" name="password" id="inputPassword" class="form-control form-control-lg" autocomplete="current-password" required>
+            <div class="invalid-feedback">
+                Please enter your email password
+            </div>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-start mb-4">
+            <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+            <label class="form-check-label" for="form1Example3"> Remember password </label>
+            </div>
+            <input type="hidden" name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}"
+            >
+
+                {#
+                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                See https://symfony.com/doc/current/security/remember_me.html
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Remember me
+                    </label>
+                </div>
+                #}
+
+                    <div class="text-center">
+                    <button  type="submit" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='/' ">
+                        Sign in
+                    </button>
+                    </div>
+
+
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+
+
+{% endblock %}

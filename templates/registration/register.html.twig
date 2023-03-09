@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <style>
+       
+     body {
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: top;
+        background-size: auto;
+    
+         
+    }
+  
+         .row {
+            position: absolute;
+            top: 20%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            width: 100%;
+            transition: 1s 0.7s ease-in-out;
+            grid-template-columns: 1fr;
+         }
+   
+    
+ 
+    .form-check {
+        display: inline-block !important;
+    
+    }
+
+</style>
+<div class="row">
+    <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 ">
+                    <h1 class="h3 mb-3 font-weight-normal text-center">Register</h1>
+                           
+                                
+                            {{ form_start(registrationForm) }}
+                                
+                                <fieldset class="scheduler-border">
+                                
+
+                                    {{ form_row(registrationForm.nom) }}
+                                    {{ form_row(registrationForm.prenom) }}
+                                 
+                                    {{ form_row(registrationForm.email) }}
+                                   
+                                </fieldset>
+                                
+                                {{ form_row(registrationForm.plainPassword, {
+                                    label: 'Password'
+                                }) }}
+                               
+
+                                <div class="text-center">
+                                {{ form_row(registrationForm.agreeTerms) }}
+                                </div>
+
+                                <div class="text-center ">
+                                <button type="submit" class="btn btn-outline-primary btn-lg btn-block my-3" onclick="window.location.href='/' ">Register</button>
+                                </div>
+                         
+                                {{ form_end(registrationForm) }}
+          
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+{% endblock %}

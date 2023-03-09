@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories index{% endblock %}
+
+{% block body %}
+    <h1>Categories index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>libelle</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.libelle }}</td>
+                <td>
+                    <a href="{{ path('app_categories_show', {'id': category.id}) }}" class="btn btn-success">show</a>
+                    <a href="{{ path('app_categories_edit', {'id': category.id}) }}" class="btn btn-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_categories_new') }}" class="btn btn-success">Create new</a>
+    <button class="btn btn-success" onclick="window.location.href='/'">home</button>
+    <button class="btn btn-success" onclick="window.location.href='/admin/produit'">produit</button>
+{% endblock %}

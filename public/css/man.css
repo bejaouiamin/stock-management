@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --pink: #e5345b;
+}
+
+body {
+    font-family: var(--sm-font);
+}
+
+
+/* button */
+
+.bg-primary {
+    background-color: var(--pink)!important;
+}
+
+.btn:not(.nav-btns button) {
+    background-color: #fff;
+    color: rgb(85, 85, 85);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+}
+
+.btn:not(.nav-btns button):hover {
+    background-color: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+}
+
+
+/* text color */
+
+.text-primary {
+    color: var(--pink)!important;
+}
+
+
+/* footer */
+
+footer .brand {
+    font-family: var(--lg-font);
+    letter-spacing: 2px;
+}
+
+footer a {
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--pink)!important;
+}
+
+footer p.copyright {
+    text-align: center;
+    padding-top: 24px;
+    opacity: 0.3;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+
+/* media queries */
+
+@media(min-width: 992px) {
+    .nav-item {
+        border-bottom: none;
+    }
+}
+
+nav form {
+    display: flex;
+    height: 35px;
+    padding: 2px;
+    background: #1e232b;
+    min-width: 18%!important;
+    border-radius: 2px;
+    border: 1px solid rgba(155, 155, 155, 0.2);
+}
+
+nav form .search-data {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 17px;
+    border: none;
+    font-weight: 100;
+    background: none;
+}
+
+nav form button {
+    padding: 0 15px;
+    color: #fff;
+    font-size: 17px;
+    background: #ff3d00;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+nav form button:hover {
+    background: #e63600;
+}
